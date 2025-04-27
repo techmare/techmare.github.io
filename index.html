@@ -4,12 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Techmare - Turning Techmares into Dreams</title>
-<<<<<<< HEAD
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a2e0e6a12f.js" crossorigin="anonymous"></script>
-=======
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a2e0e6a12f.js" crossorigin="anonymous"></script> <!-- For icons -->
+  <script src="https://kit.fontawesome.com/a2e0e6a12f.js" crossorigin="anonymous"></script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -33,6 +29,7 @@
       top: 0;
       z-index: 999;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-family: 'Roboto', sans-serif;
     }
 
     nav .logo {
@@ -50,13 +47,29 @@
 
     nav ul li {
       margin: 0 15px;
+      position: relative;
     }
 
     nav ul li a {
       text-decoration: none;
       color: #000;
       font-weight: bold;
-      transition: color 0.3s;
+      padding: 5px 0;
+      transition: all 0.3s;
+    }
+
+    nav ul li a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #1565C0;
+      transition: width 0.3s;
+      margin-top: 5px;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
     }
 
     nav ul li a:hover {
@@ -75,7 +88,7 @@
 
     header {
       height: 100vh;
-      animation: fadeIn 2s ease-in;
+      animation: fadeSlideUp 1.5s ease-out;
     }
 
     img.logo {
@@ -83,18 +96,25 @@
       height: auto;
       border-radius: 50%;
       background: white;
-      padding: 10px;
+      padding: 15px;
+      border: 6px solid white;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
       margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    img.logo:hover {
+      transform: scale(1.05);
     }
 
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3.5rem;
-      margin: 0;
+      margin: 10px 0 5px;
     }
 
     p.tagline {
-      margin-top: 10px;
+      margin-top: 5px;
       font-size: 1.5rem;
       color: #1565C0;
     }
@@ -107,7 +127,6 @@
       background-color: #ffe082;
     }
 
-    /* Contact Form */
     form {
       display: flex;
       flex-direction: column;
@@ -158,9 +177,15 @@
       color: #1565C0;
     }
 
-    @keyframes fadeIn {
-      0% {opacity: 0;}
-      100% {opacity: 1;}
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     footer {
@@ -171,61 +196,52 @@
       margin-top: 30px;
     }
   </style>
->>>>>>> parent of 846f2a3 (Update index.html)
 </head>
 <body>
 
+  <!-- Navigation Bar -->
   <nav>
     <div class="logo">Techmare</div>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#dreams">Journal</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
+  <!-- Landing/Home -->
   <header id="home">
-    <img id="main-logo" src="your-cat-logo.png" alt="Techmare Logo" class="logo">
+    <img src="your-cat-logo.png" alt="Techmare Logo" class="logo">
     <h1>TECHMARE</h1>
     <p class="tagline">Turning techmares into dreams.</p>
   </header>
 
+  <!-- About Me -->
   <section id="about">
     <h2>About Me</h2>
-    <p>Hi! I'm a passionate developer who loves turning complicated 'techmares' into creative, user-friendly dreams.</p>
-    <img src="your-cat-logo.png" alt="Avatar" class="logo small">
+    <p>Hi! I'm a passionate developer who loves turning complicated "techmares" into creative, user-friendly dreams. I'm on a journey to explore coding, design, and innovation — and I'd love to bring you along!</p>
+    <img src="your-cat-logo.png" alt="Avatar" class="logo" style="max-width: 150px; margin-top: 20px;">
   </section>
 
-  <section id="dreams">
-    <h2>Dream Journal</h2>
-    <ul id="dream-list"></ul>
-    <button id="new-dream" class="glow-btn">Give Me A Dream</button>
-  </section>
-
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact Me</h2>
     <form action="mailto:your@email.com" method="POST" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" class="glow-btn">Send Message</button>
+      <button type="submit">Send Message</button>
     </form>
+
     <div class="social-icons">
       <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
-    <div id="visit-counter" class="retro-counter"></div>
   </section>
 
-  <div id="terminal" class="terminal hidden">
-    <div class="terminal-output" id="term-output"></div>
-    <div class="terminal-input-line">
-      <span class="prompt">$</span>
-      <input type="text" id="term-input" autocomplete="off" autofocus>
-    </div>
-  </div>
+  <footer>
+    &copy; 2025 Techmare. All rights reserved.
+  </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
