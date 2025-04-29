@@ -24,7 +24,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
+      padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 999;
@@ -45,6 +45,30 @@
       padding: 0;
     }
 
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* Vertically centers items */
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center; /* Ensures menu items are vertically aligned */
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px; /* Adjusts spacing between menu items */
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
     nav ul li {
       margin: 0 15px;
       position: relative;
@@ -56,6 +80,9 @@
       font-weight: bold;
       padding: 5px 0;
       transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      height: 100%;
     }
 
     nav ul li a::after {
@@ -199,21 +226,22 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="logo">Techmare</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Navigation Bar -->
+<nav>
+  <div class="logo">Techmare</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
 
   <!-- Landing/Home -->
   <header id="home">
     <img src="your-cat-logo.png" alt="Techmare Logo" class="logo">
     <h1>TECHMARE</h1>
-    <p class="tagline">Turning techmares into dreams.</p>
+    <p class="tagline">Turning tech nightmares into dreams.</p>
   </header>
 
   <!-- About Me -->
